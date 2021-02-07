@@ -1,5 +1,6 @@
+.PHONY: build run package example-build-frontend example-build-backend example-build \
+example-frontend-up example-envoy example-server example-client example-up example-down
 
-.PHONY: build
 build:
 	yarn && yarn build
 

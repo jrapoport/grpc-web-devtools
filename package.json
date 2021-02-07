@@ -1,11 +1,11 @@
 {
   "name": "grpc-web-devtools",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "license": "MIT",
-  "author": "SafetyCulture",
+  "author": "jrapoport",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SafetyCulture/grpc-web-devtools"
+    "url": "https://github.com/jrapoport/grpc-web-devtools"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,15 +24,15 @@
   ],
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
-    "fuse.js": "^6.4.3",
+    "fuse.js": "^6.4.6",
     "lodash": "4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-json-view": "^1.19.1",
+    "react-json-view": "^1.21.1",
     "react-redux": "^7.2.2",
-    "react-scripts": "4.0.1",
+    "react-scripts": "4.0.2",
     "react-split": "^2.0.9",
-    "react-virtualized-auto-sizer": "^1.0.2",
+    "react-virtualized-auto-sizer": "^1.0.4",
     "react-window": "^1.8.6"
   },
   "devDependencies": {
