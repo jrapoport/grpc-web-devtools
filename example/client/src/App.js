@@ -5,7 +5,11 @@ import {ExampleOneRequest, ExampleTwoRequest, StreamRequest} from './example_pb'
 import Sentencer from 'sentencer';
 
 const devInterceptors = window.__GRPCWEB_DEVTOOLS__ || (() => {
-});
+  return {
+    devToolsUnaryInterceptor:undefined,
+    devToolsStreamInterceptor:undefined,
+  }});
+
 const {
   devToolsUnaryInterceptor,
   devToolsStreamInterceptor,
@@ -51,8 +55,7 @@ function App() {
   }
 
   function alwaysError() {
-    promiseClient.alwaysError(new ExampleOneRequest()).catch(() => {
-    })
+    promiseClient.alwaysError(new ExampleOneRequest()).catch(() => {})
   }
 
   function formatDateTime(timestamp) {
@@ -81,6 +84,10 @@ function App() {
   }
 
   React.useEffect(() => {
+    if (!window.__GRPCWEB_DEVTOOLS__) {
+      setMessage("gRPC-Web Dev Tools not found.")
+      return
+    }
     exampleOne()
     exampleStreamChain()
     exampleStream(true)
