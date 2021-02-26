@@ -20,7 +20,7 @@ chrome.runtime.onConnect.addListener(port => {
   }
 
   let extensionListener = message => {
-    const tabId = port.sender?.tab.id >= 0 ? port.sender.tab.id : message.tabId;
+    const tabId = port.sender?.tab?.id >= 0 ? port.sender.tab.id : message.tabId;
 
     // The original connection event doesn't include the tab ID of the
     // DevTools page, so we need to send it explicitly (attached
