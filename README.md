@@ -1,6 +1,10 @@
-# gRPC-Web Dev Tools Interceptor Edition
+# gRPC-Web Dev Tools: Interceptor Edition
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) 
+[![GitHub](https://img.shields.io/github/license/jrapoport/grpc-web-devtools?style=flat-square)](https://github.com/jrapoport/grpc-web-devtools/blob/master/LICENSE)
+
+
+[![Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-☕-6F4E37?style=flat-square)](https://www.buymeacoffee.com/jrapoport)
 
 
 ![gRPC-Web Dev Tools](screenshots/store_light_dark.png)
