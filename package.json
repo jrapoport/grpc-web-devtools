@@ -8,6 +8,7 @@
     "url": "https://github.com/jrapoport/grpc-web-devtools"
   },
   "scripts": {
+    "update": "ncu -u && yarn",
     "start": "react-scripts start",
     "build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
     "test": "react-scripts test",
@@ -23,19 +24,20 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@reduxjs/toolkit": "^1.5.0",
+    "@reduxjs/toolkit": "^1.5.1",
     "fuse.js": "^6.4.6",
-    "lodash": "4.17.20",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-json-view": "^1.21.1",
-    "react-redux": "^7.2.2",
-    "react-scripts": "4.0.2",
-    "react-split": "^2.0.9",
-    "react-virtualized-auto-sizer": "^1.0.4",
+    "lodash": "4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-json-view": "^1.21.3",
+    "react-redux": "^7.2.4",
+    "react-scripts": "4.0.3",
+    "react-split": "^2.0.11",
+    "react-virtualized-auto-sizer": "^1.0.5",
     "react-window": "^1.8.6"
   },
   "devDependencies": {
+    "npm-check-updates": "^11.5.10",
     "protoc-gen-grpc-web": "^1.2.1"
   }
 }
