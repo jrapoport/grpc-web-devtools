@@ -15,7 +15,7 @@ example-build-frontend:
 		--grpc-web_out=import_style=commonjs,mode=grpcwebtext:example/client/src example/*.proto
 
 example-build-backend:
-	protoc -I./example --go_out=plugins=grpc:example/server example/*.proto
+	protoc -I./example --go_out=example/server --go-grpc_out=example/server example/*.proto
 
 example-build: example-build-backend example-build-frontend
 
@@ -23,7 +23,7 @@ example-frontend-up: example-build-frontend
 	npm run start --prefix example/client
 
 example-envoy:
-	docker build -t grpcweb-devtools-example/envoy -f ./example/envoy.Dockerfile ./example
+	docker-compose -f ./example/docker-compose.yml up -d envoy
 
 example-server:
 	docker build -t grpcweb-devtools-example/server ./example/server
@@ -31,7 +31,7 @@ example-server:
 example-client: 
 	docker build -t grpcweb-devtools-example/client ./example/client
 
-example-up: example-server example-envoy example-server example-client
+example-up: example-server example-server example-client
 	docker-compose -f ./example/docker-compose.yml up -d;
 
 example-down:

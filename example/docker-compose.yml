@@ -9,8 +9,14 @@ services:
     image: grpcweb-devtools-example/server
     depends_on:
       - envoy
-  
+
   envoy:
-    image: grpcweb-devtools-example/envoy
+    image: envoyproxy/envoy:v1.20-latest
+    command: /usr/local/bin/envoy -c /etc/envoy/envoy.yaml -l trace
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    expose:
+      - "8080"
+      - "9901"
     ports:
       - "18080:8080"

@@ -2,7 +2,6 @@ import * as React from "react";
 import './App.css';
 import {ExampleServiceClient, ExampleServicePromiseClient} from './example_grpc_web_pb';
 import {ExampleOneRequest, ExampleTwoRequest, StreamRequest} from './example_pb';
-import Sentencer from 'sentencer';
 
 const devInterceptors = window.__GRPCWEB_DEVTOOLS__ || (() => {
   return {
@@ -34,10 +33,11 @@ const callbackClient = new ExampleServiceClient(
 function App() {
 
   const [message, setMessage] = React.useState('Starting gRPC tests...');
+  let n = 1;
 
   function exampleOne() {
     const req = new ExampleOneRequest();
-    req.setMsg(Sentencer.make("This is {{ an_adjective }} {{ noun }}."));
+    req.setMsg(`example one #${n++}`);
     promiseClient.exampleOne(req).then(res => {
       setMessage(res.getMsg());
     }).catch(console.error)

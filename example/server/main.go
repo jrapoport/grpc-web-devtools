@@ -20,7 +20,9 @@ const (
 	port = ":50051"
 )
 
-type server struct{}
+type server struct {
+	UnimplementedExampleServiceServer
+}
 
 func (s *server) ExampleOne(_ context.Context, req *ExampleOneRequest) (*ExampleOneResponse, error) {
 	return &ExampleOneResponse{
@@ -42,21 +44,21 @@ func (s *server) AlwaysError(context.Context, *ExampleOneRequest) (*ExampleOneRe
 }
 
 func (s *server) StreamingExample(req *StreamRequest, stream ExampleService_StreamingExampleServer) error {
-  if req.GetError() {
-    time.Sleep(time.Second * 10)
-    code := codes.Code(rand.Int31n(15) + 1)
-	  return status.Error(code, "a server streaming error occurred")
-  }
+	if req.GetError() {
+		time.Sleep(time.Second * 10)
+		code := codes.Code(rand.Int31n(15) + 1)
+		return status.Error(code, "a server streaming error occurred")
+	}
 
-  for start := time.Now(); time.Since(start) < time.Minute; {
-    t := ServerTime{
-      Time: time.Now().String(),
-    }
-    _ = stream.Send(&t)
-    time.Sleep(time.Second * 10)
-  }
+	for start := time.Now(); time.Since(start) < time.Minute; {
+		t := ServerTime{
+			Time: time.Now().String(),
+		}
+		_ = stream.Send(&t)
+		time.Sleep(time.Second * 10)
+	}
 
-  return nil
+	return nil
 }
 
 func main() {
