@@ -86,10 +86,12 @@ const opts = {
 };
 const client = new EchoServiceClient('http://myapi.com', null, opts);
 ```
-> NOTE:
-> Requires clients use grpc-web >= 1.2.1
-> Requires that your generated client(s) use `protoc-gen-grpc-web` >= 1.2.1
-> protoc-gen-grpc-web v1.2.1 is bundled
+
+> NOTE:  
+> Requires clients use grpc-web >= 1.2.1 & that your generated client(s) use `protoc-gen-grpc-web` >= 1.2.1  
+>
+> ~~protoc-gen-grpc-web v1.3.0 is bundled~~  
+> (disabled temporarily pending arm64 macOS support)
 
 ## Example
 
