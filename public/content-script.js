@@ -117,9 +117,11 @@ function injectors(msgSource) {
         };
 
         removeListener(eventType, callback) {
+          this.stream.removeListener(eventType, callback);
         }
 
         cancel() {
+          this.stream.cancel();
         }
       }
 
